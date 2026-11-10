@@ -3,126 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#285c50">
 <title>GITHA MART - Aplikasi Kasir</title>
 
 <style>
-:root {
-    --hijau: #239B69;
-    --hijau-gelap: #285C50;
-    --ungu: #7048BE;
-    --merah: #DC414B;
-    --oranye: #F0912D;
-    --latar: #F2F5FC;
-}
-
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: var(--latar);
-    color: #303747;
+    background: #f2f5fc;
+    color: #333;
 }
-
-button, input, select {
-    font: inherit;
-}
-
-button {
-    border: none;
-    padding: 12px 16px;
-    border-radius: 7px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: .9;
-}
-
-input, select {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #bbb;
-    border-radius: 7px;
-    margin-top: 7px;
-}
-
-.btn-hijau { background: var(--hijau); }
-.btn-merah { background: var(--merah); }
-.btn-ungu { background: var(--ungu); }
-.btn-oranye { background: var(--oranye); }
-.btn-abu { background: #555B68; }
 
 /* LOGIN */
-
-.login-page {
+#halamanLogin {
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
-    background: linear-gradient(135deg, #e5eee9, #f8f5ec);
+    background: #e9f0ed;
 }
 
 .login-box {
     background: white;
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px #0002;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px #0002;
 }
 
-.login-title {
-    background: var(--hijau-gelap);
+.login-header {
+    background: #285c50;
     color: white;
     text-align: center;
-    padding: 18px;
-    font-size: 27px;
-    font-weight: bold;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
-.welcome {
-    text-align: center;
-    color: var(--hijau-gelap);
-    font-size: 19px;
-    font-weight: bold;
-    margin: 20px 0;
+.login-header h1 {
+    font-size: 27px;
+}
+
+.login-header p {
+    margin-top: 8px;
 }
 
 .login-box label {
     display: block;
+    margin: 15px 0 7px;
     font-weight: bold;
-    margin-top: 15px;
 }
 
-.login-box button {
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #285c50;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+/* TOMBOL */
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 16px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.btn-login {
+    background: #285c50;
     width: 100%;
     margin-top: 22px;
-    background: var(--hijau-gelap);
+    padding: 13px;
+    font-size: 16px;
 }
 
-/* APLIKASI KASIR */
+.hijau { background: #239b69; }
+.merah { background: #dc414b; }
+.oranye { background: #e58e32; }
+.ungu { background: #7048be; }
+.abu { background: #555d68; }
 
-#halamanKasir {
+/* APLIKASI */
+#aplikasi {
     display: none;
 }
 
-header {
-    background: #777;
+.header {
+    background: #285c50;
     color: white;
     text-align: center;
     padding: 23px 10px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 25px;
+.header h1 {
+    font-size: 26px;
+}
+
+.header p {
+    margin-top: 7px;
 }
 
 .container {
@@ -133,36 +127,49 @@ header h1 {
 
 .panel {
     background: white;
-    padding: 17px;
+    padding: 18px;
     border-radius: 12px;
-    margin-bottom: 16px;
-    box-shadow: 0 3px 12px #0001;
+    box-shadow: 0 2px 8px #0001;
+    margin-bottom: 17px;
 }
 
 .panel h3 {
-    color: var(--ungu);
-    margin-top: 0;
+    color: #285c50;
+    margin-bottom: 15px;
 }
 
 .input-area {
-    display: grid;
-    grid-template-columns: 2fr 1fr auto;
-    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
     align-items: end;
+    gap: 13px;
 }
 
-label {
+.grup {
+    flex: 1;
+    min-width: 130px;
+}
+
+.grup label {
+    display: block;
+    margin-bottom: 7px;
     font-weight: bold;
-    font-size: 14px;
 }
 
-.layout {
-    display: grid;
-    grid-template-columns: 1fr 330px;
-    gap: 16px;
+input, select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 15px;
 }
 
-.table-wrapper {
+.input-area button {
+    min-height: 42px;
+}
+
+/* TABEL */
+.tabel-wrapper {
     width: 100%;
     overflow-x: auto;
 }
@@ -174,65 +181,62 @@ table {
 }
 
 th {
-    background: var(--ungu);
+    background: #7048be;
     color: white;
-    padding: 13px 9px;
+    padding: 13px 10px;
 }
 
 td {
-    padding: 12px 9px;
+    padding: 12px 10px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
 tbody tr:nth-child(even) {
-    background: #EEF3FF;
+    background: #eef3ff;
 }
 
-tbody tr.selected {
-    outline: 2px solid var(--ungu);
+/* PEMBAYARAN */
+.layout-bawah {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
 }
 
 .total {
-    font-size: 24px;
-    color: var(--ungu);
+    color: #285c50;
+    font-size: 25px;
     font-weight: bold;
-    margin: 12px 0 20px;
+    margin: 12px 0 18px;
 }
 
 .kembalian {
-    font-size: 21px;
-    color: var(--hijau);
+    color: #239b69;
+    font-size: 22px;
     font-weight: bold;
-    margin: 12px 0;
+    margin-top: 10px;
 }
 
-.payment button {
+.panel-bayar button {
     width: 100%;
     margin-top: 15px;
 }
 
-.action-buttons {
+.tombol-bawah {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 18px;
+    margin-top: 15px;
 }
 
-.action-buttons button {
-    min-width: 130px;
+.tombol-bawah button {
+    min-width: 125px;
+    padding: 13px 18px;
 }
 
-.footer {
-    text-align: center;
-    padding: 15px;
-    color: #777;
-}
-
-/* STRUK */
-
-.receipt-overlay {
+/* STRUK TERPISAH */
+#jendelaStruk {
     display: none;
     position: fixed;
     inset: 0;
@@ -243,90 +247,117 @@ tbody tr.selected {
     padding: 15px;
 }
 
-.receipt-box {
+.struk-box {
     background: white;
     width: 100%;
-    max-width: 480px;
+    max-width: 440px;
     max-height: 90vh;
     overflow-y: auto;
-    padding: 20px;
+    padding: 22px;
     border-radius: 12px;
 }
 
-.receipt-title {
+.struk-box h2 {
     text-align: center;
-    color: var(--ungu);
+    color: #7048be;
+    margin-bottom: 15px;
 }
 
-.receipt-text {
-    background: #FFFDF0;
-    border: 1px dashed #999;
-    padding: 18px;
+#isiStruk {
+    background: #fffdf0;
+    border: 1px solid #ddd;
+    padding: 17px;
     white-space: pre-wrap;
-    overflow-wrap: anywhere;
     font-family: monospace;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
 }
 
-.receipt-buttons {
+.struk-tombol {
     display: flex;
     gap: 10px;
     margin-top: 15px;
 }
 
-.receipt-buttons button {
+.struk-tombol button {
     flex: 1;
 }
 
-@media(max-width: 850px) {
-    .layout {
+/* RESPONSIVE */
+@media(max-width: 750px) {
+    .layout-bawah {
         grid-template-columns: 1fr;
     }
-}
 
-@media(max-width: 560px) {
+    .header h1 {
+        font-size: 21px;
+    }
+
     .container {
         padding: 10px;
     }
 
+    .panel {
+        padding: 14px;
+    }
+
     .input-area {
-        grid-template-columns: 1fr 90px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .grup {
+        width: 100%;
     }
 
     .input-area button {
-        grid-column: 1 / -1;
         width: 100%;
     }
 
-    .action-buttons button {
+    .tombol-bawah button {
         flex: 1 1 40%;
-    }
-
-    header h1 {
-        font-size: 20px;
     }
 }
 
+/* CETAK STRUK */
 @media print {
     body * {
-        visibility: hidden;
+        visibility: hidden !important;
     }
 
-    #areaStruk, #areaStruk * {
-        visibility: visible;
+    #isiStruk, #isiStruk * {
+        visibility: visible !important;
     }
 
-    #areaStruk {
+    #jendelaStruk {
+        display: block !important;
         position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        border: none;
+        inset: 0;
+        background: white;
+        padding: 0;
     }
 
-    .receipt-buttons, .receipt-title {
-        display: none;
+    .struk-box {
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+        overflow: visible;
+        border: none;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    .struk-box h2,
+    .struk-tombol {
+        display: none !important;
+    }
+
+    #isiStruk {
+        border: none;
+        background: white;
+        padding: 0;
+        font-size: 12px;
     }
 }
 </style>
@@ -335,206 +366,194 @@ tbody tr.selected {
 <body>
 
 <!-- HALAMAN LOGIN -->
-
-<section class="login-page" id="halamanLogin">
-
+<section id="halamanLogin">
     <div class="login-box">
 
-        <div class="login-title">
-            GITHA MART
+        <div class="login-header">
+            <h1>GITHA MART</h1>
+            <p>SELAMAT DATANG</p>
+            <p>Selamat Berbelanja di Toko Kami</p>
         </div>
 
-        <div class="welcome">
-            SELAMAT DATANG
-        </div>
+        <label>Username</label>
+        <input type="text" id="username"
+               placeholder="Masukkan username">
 
-        <form id="formLogin">
+        <label>Password</label>
+        <input type="password" id="password"
+               placeholder="Masukkan password">
 
-            <label>Username</label>
-            <input type="text" id="username"
-                   placeholder="Masukkan username" required>
-
-            <label>Password</label>
-            <input type="password" id="password"
-                   placeholder="Masukkan password" required>
-
-            <button type="submit">
-                LOGIN
-            </button>
-
-        </form>
-
-        <p style="text-align:center;color:#777;">
-            Selamat berbelanja di toko kami 💚
-        </p>
-
+        <button class="btn-login" onclick="login()">
+            LOGIN
+        </button>
     </div>
-
 </section>
 
+
 <!-- HALAMAN KASIR -->
+<section id="aplikasi">
 
-<section id="halamanKasir">
+    <header class="header">
+        <h1>GITHA MART - APLIKASI KASIR</h1>
+        <p>Selamat Berbelanja di Toko Kami</p>
+    </header>
 
-<header>
-    <h1>GITHA MART - APLIKASI KASIR</h1>
-    <p>Selamat Berbelanja di Toko Kami 💚</p>
-</header>
+    <main class="container">
 
-<main class="container">
+        <!-- INPUT BARANG -->
+        <div class="panel">
+            <h3>INPUT BARANG</h3>
 
-    <div class="layout">
+            <div class="input-area">
 
-        <div>
+                <div class="grup">
+                    <label>Nama Barang</label>
+                    <select id="pilihanBarang"
+                            onchange="ubahHarga()">
+                    </select>
+                </div>
 
-            <!-- INPUT BARANG -->
+                <div class="grup">
+                    <label>Harga Barang</label>
+                    <input type="text" id="hargaBarang"
+                           readonly>
+                </div>
 
-            <section class="panel">
+                <div class="grup">
+                    <label>Jumlah</label>
+                    <input type="number" id="jumlahBarang"
+                           value="1" min="1" max="1000">
+                </div>
 
-                <h3>INPUT BARANG</h3>
+                <button class="hijau"
+                        onclick="tambahBarang()">
+                    + Tambah Barang
+                </button>
 
-                <div class="input-area">
+            </div>
+        </div>
 
-                    <div>
-                        <label>Nama Barang</label>
-                        <select id="pilihanBarang"></select>
-                    </div>
 
-                    <div>
-                        <label>Jumlah</label>
-                        <input type="number" id="jumlahBarang"
-                               min="1" max="1000" value="1">
-                    </div>
+        <!-- TABEL TRANSAKSI -->
+        <div class="panel">
+            <h3>DAFTAR TRANSAKSI</h3>
 
-                    <button class="btn-hijau" id="btnTambah">
-                        Tambah Barang
+            <div class="tabel-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Barang</th>
+                            <th>Harga</th>
+                            <th>Jumlah</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="daftarTransaksi">
+                        <tr>
+                            <td colspan="4">
+                                Belum ada barang
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- PEMBAYARAN DAN TOTAL -->
+        <div class="layout-bawah">
+
+            <div class="panel panel-bayar">
+                <h3>PEMBAYARAN</h3>
+
+                <label>Total Belanja</label>
+                <div class="total" id="totalBelanja">
+                    Rp0
+                </div>
+
+                <label>Uang Pembayaran (Rp)</label>
+                <input type="number" id="uangBayar"
+                       placeholder="Masukkan uang pembayaran"
+                       min="0">
+
+                <label style="display:block;margin-top:15px">
+                    Kembalian
+                </label>
+
+                <div class="kembalian" id="kembalian">
+                    Rp0
+                </div>
+
+                <button class="hijau"
+                        onclick="prosesPembayaran()">
+                    PROSES PEMBAYARAN
+                </button>
+            </div>
+
+
+            <div class="panel">
+                <h3>MENU TRANSAKSI</h3>
+
+                <p style="color:#666;line-height:1.7">
+                    Pilih barang, masukkan jumlah,
+                    kemudian tambahkan ke daftar transaksi.
+                    Setelah selesai, lakukan pembayaran.
+                </p>
+
+                <div class="tombol-bawah">
+
+                    <button class="merah"
+                            onclick="hapusBarang()">
+                        Hapus Barang
+                    </button>
+
+                    <button class="oranye"
+                            onclick="resetTransaksi()">
+                        Reset Transaksi
+                    </button>
+
+                    <button class="abu"
+                            onclick="keluar()">
+                        Keluar
                     </button>
 
                 </div>
-
-            </section>
-
-            <!-- TABEL TRANSAKSI -->
-
-            <section class="panel">
-
-                <h3>DAFTAR TRANSAKSI</h3>
-
-                <div class="table-wrapper">
-
-                    <table>
-
-                        <thead>
-                            <tr>
-                                <th>Nama Barang</th>
-                                <th>Harga</th>
-                                <th>Jumlah</th>
-                                <th>Subtotal</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="isiTabel">
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </section>
+            </div>
 
         </div>
 
-        <!-- PEMBAYARAN -->
-
-        <section class="panel payment">
-
-            <h3>PEMBAYARAN</h3>
-
-            <label>Total Belanja:</label>
-
-            <div class="total" id="lblTotal">
-                Rp0
-            </div>
-
-            <label>Uang Pembayaran (Rp):</label>
-
-            <input type="number" id="txtBayar"
-                   min="0" placeholder="Masukkan pembayaran">
-
-            <label style="display:block;margin-top:20px;">
-                Kembalian:
-            </label>
-
-            <div class="kembalian" id="lblKembalian">
-                Rp0
-            </div>
-
-            <button class="btn-hijau" id="btnBayar">
-                PROSES PEMBAYARAN
-            </button>
-
-        </section>
-
-    </div>
-
-    <!-- TOMBOL BAWAH -->
-
-    <div class="action-buttons">
-
-        <button class="btn-merah" id="btnHapus">
-            Hapus Barang
-        </button>
-
-        <button class="btn-oranye" id="btnReset">
-            Reset Transaksi
-        </button>
-
-        <button class="btn-abu" id="btnKeluar">
-            Keluar
-        </button>
-
-    </div>
-
-</main>
-
-<footer class="footer">
-    © 2026 GITHA MART | Aplikasi Kasir
-</footer>
-
+    </main>
 </section>
 
+
 <!-- JENDELA STRUK TERPISAH -->
+<div id="jendelaStruk">
+    <div class="struk-box">
 
-<div class="receipt-overlay" id="jendelaStruk">
+        <h2>GITHA MART - STRUK BELANJA</h2>
 
-    <div class="receipt-box">
+        <div id="isiStruk"></div>
 
-        <h2 class="receipt-title">
-            GITHA MART - STRUK BELANJA
-        </h2>
-
-        <div class="receipt-text" id="areaStruk"></div>
-
-        <div class="receipt-buttons">
-
-            <button class="btn-ungu" id="btnCetak">
+        <div class="struk-tombol">
+            <button class="ungu"
+                    onclick="cetakStruk()">
                 Cetak Struk
             </button>
 
-            <button class="btn-merah" id="btnTutup">
+            <button class="merah"
+                    onclick="tutupStruk()">
                 Tutup
             </button>
-
         </div>
 
     </div>
-
 </div>
+
 
 <script>
 
 // DATA BARANG
-
 const barang = [
     {nama:"Air Mineral Botol", harga:4000},
     {nama:"Teh Kotak melati", harga:5000},
@@ -546,49 +565,25 @@ const barang = [
     {nama:"Biskuit Coklat Sandwich", harga:7500}
 ];
 
-// FORMAT RUPIAH
-
-function rupiah(nilai) {
-    return new Intl.NumberFormat("id-ID", {
-        style: "currency",
-        currency: "IDR",
-        maximumFractionDigits: 0
-    }).format(nilai);
-}
-
-// VARIABEL
-
-let daftarBarang = [];
+let transaksi = [];
 let total = 0;
 let uangBayar = 0;
 let pembayaranSelesai = false;
-let barisTerpilih = -1;
+let nomorDipilih = -1;
 
-// ELEMENT
 
-const pilihanBarang = document.getElementById("pilihanBarang");
-const isiTabel = document.getElementById("isiTabel");
+// FORMAT RUPIAH
+function rupiah(angka) {
+    return new Intl.NumberFormat("id-ID", {
+        style:"currency",
+        currency:"IDR",
+        minimumFractionDigits:0
+    }).format(angka);
+}
 
-// MEMASUKKAN BARANG KE PILIHAN
-
-barang.forEach((item, index) => {
-
-    const option = document.createElement("option");
-
-    option.value = index;
-    option.textContent =
-        item.nama + " - " + rupiah(item.harga);
-
-    pilihanBarang.appendChild(option);
-
-});
 
 // LOGIN
-
-document.getElementById("formLogin")
-.addEventListener("submit", function(e) {
-
-    e.preventDefault();
+function login() {
 
     const user =
         document.getElementById("username").value.trim();
@@ -600,7 +595,9 @@ document.getElementById("formLogin")
 
         document.getElementById("halamanLogin").style.display = "none";
 
-        document.getElementById("halamanKasir").style.display = "block";
+        document.getElementById("aplikasi").style.display = "block";
+
+        isiPilihanBarang();
 
     } else {
 
@@ -609,248 +606,302 @@ document.getElementById("formLogin")
         document.getElementById("password").value = "";
 
     }
+}
 
+
+// ENTER UNTUK LOGIN
+document.getElementById("password")
+.addEventListener("keydown", function(e) {
+    if(e.key === "Enter") login();
 });
 
-// TAMPILKAN TABEL
 
-function tampilkanTabel() {
+// MEMUAT PILIHAN BARANG
+function isiPilihanBarang() {
 
-    isiTabel.innerHTML = "";
+    const select =
+        document.getElementById("pilihanBarang");
 
-    if(daftarBarang.length === 0) {
+    select.innerHTML = "";
 
-        isiTabel.innerHTML =
-            '<tr><td colspan="4">Belum ada barang.</td></tr>';
+    barang.forEach((item,index) => {
 
-    }
+        const option = document.createElement("option");
 
-    daftarBarang.forEach((item, index) => {
+        option.value = index;
+        option.textContent = item.nama;
 
-        const baris = document.createElement("tr");
-
-        if(index === barisTerpilih) {
-            baris.classList.add("selected");
-        }
-
-        baris.innerHTML = `
-            <td>${item.nama}</td>
-            <td>${rupiah(item.harga)}</td>
-            <td>${item.jumlah}</td>
-            <td>${rupiah(item.harga * item.jumlah)}</td>
-        `;
-
-        baris.addEventListener("click", function() {
-
-            barisTerpilih = index;
-            tampilkanTabel();
-
-        });
-
-        isiTabel.appendChild(baris);
+        select.appendChild(option);
 
     });
 
-    hitungTotal();
+    ubahHarga();
+}
+
+
+// MENGUBAH HARGA OTOMATIS
+function ubahHarga() {
+
+    const index =
+        document.getElementById("pilihanBarang").value;
+
+    document.getElementById("hargaBarang").value =
+        rupiah(barang[index].harga);
 
 }
 
-// TAMBAH BARANG
 
-document.getElementById("btnTambah")
-.addEventListener("click", function() {
+// MENAMBAH BARANG
+function tambahBarang() {
 
     if(pembayaranSelesai) {
-        alert("Silakan reset transaksi dahulu.");
+        alert("Silakan reset transaksi terlebih dahulu.");
         return;
     }
 
-    const index = Number(pilihanBarang.value);
+    const index =
+        Number(document.getElementById("pilihanBarang").value);
 
-    const jumlah = Number(
-        document.getElementById("jumlahBarang").value
-    );
+    const jumlah =
+        Number(document.getElementById("jumlahBarang").value);
 
     if(!Number.isInteger(jumlah) || jumlah < 1 || jumlah > 1000) {
-        alert("Jumlah barang tidak valid!");
+        alert("Masukkan jumlah barang antara 1 sampai 1000.");
         return;
     }
 
     const item = barang[index];
 
-    const sudahAda = daftarBarang.find(
-        b => b.nama === item.nama
+    const ditemukan = transaksi.find(
+        x => x.nama === item.nama
     );
 
-    if(sudahAda) {
+    if(ditemukan) {
 
-        sudahAda.jumlah += jumlah;
+        ditemukan.jumlah += jumlah;
 
     } else {
 
-        daftarBarang.push({
-            nama: item.nama,
-            harga: item.harga,
-            jumlah: jumlah
+        transaksi.push({
+            nama:item.nama,
+            harga:item.harga,
+            jumlah:jumlah
         });
 
     }
 
-    document.getElementById("jumlahBarang").value = 1;
-    document.getElementById("txtBayar").value = "";
-    document.getElementById("lblKembalian").textContent = rupiah(0);
+    nomorDipilih = -1;
 
-    barisTerpilih = -1;
+    document.getElementById("jumlahBarang").value = 1;
 
     tampilkanTabel();
-
-});
-
-// HITUNG TOTAL
-
-function hitungTotal() {
-
-    total = 0;
-
-    daftarBarang.forEach(item => {
-
-        total += item.harga * item.jumlah;
-
-    });
-
-    document.getElementById("lblTotal").textContent =
-        rupiah(total);
+    hitungTotal();
 
 }
 
-// HAPUS BARANG
 
-document.getElementById("btnHapus")
-.addEventListener("click", function() {
+// MENAMPILKAN TABEL
+function tampilkanTabel() {
+
+    const tbody =
+        document.getElementById("daftarTransaksi");
+
+    tbody.innerHTML = "";
+
+    if(transaksi.length === 0) {
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="4">Belum ada barang</td>
+            </tr>
+        `;
+
+        return;
+    }
+
+    transaksi.forEach((item,index) => {
+
+        const tr = document.createElement("tr");
+
+        tr.style.cursor = "pointer";
+
+        if(nomorDipilih === index) {
+            tr.style.background = "#d0dfd8";
+        }
+
+        tr.onclick = () => {
+            nomorDipilih = index;
+            tampilkanTabel();
+        };
+
+        const nama = document.createElement("td");
+        nama.textContent = item.nama;
+
+        const harga = document.createElement("td");
+        harga.textContent = rupiah(item.harga);
+
+        const jumlah = document.createElement("td");
+        jumlah.textContent = item.jumlah;
+
+        const subtotal = document.createElement("td");
+        subtotal.textContent =
+            rupiah(item.harga * item.jumlah);
+
+        tr.append(nama,harga,jumlah,subtotal);
+
+        tbody.appendChild(tr);
+
+    });
+
+}
+
+
+// MENGHITUNG TOTAL
+function hitungTotal() {
+
+    total = transaksi.reduce(
+        (sum,item) =>
+        sum + item.harga * item.jumlah, 0
+    );
+
+    document.getElementById("totalBelanja")
+        .textContent = rupiah(total);
+
+    document.getElementById("kembalian")
+        .textContent = rupiah(0);
+
+    document.getElementById("uangBayar").value = "";
+
+    pembayaranSelesai = false;
+
+}
+
+
+// HAPUS BARANG
+function hapusBarang() {
 
     if(pembayaranSelesai) {
-        alert("Silakan reset transaksi dahulu.");
+        alert("Pembayaran sudah selesai. Silakan reset transaksi.");
         return;
     }
 
-    if(barisTerpilih === -1) {
-
-        alert("Pilih barang pada tabel terlebih dahulu.");
-
+    if(nomorDipilih === -1) {
+        alert("Pilih baris barang pada tabel yang ingin dihapus.");
         return;
-
     }
 
-    daftarBarang.splice(barisTerpilih, 1);
+    transaksi.splice(nomorDipilih,1);
 
-    barisTerpilih = -1;
+    nomorDipilih = -1;
 
     tampilkanTabel();
+    hitungTotal();
 
-});
+}
+
 
 // RESET TRANSAKSI
+function resetTransaksi() {
 
-document.getElementById("btnReset")
-.addEventListener("click", function() {
-
-    if(confirm("Hapus semua barang dan reset transaksi?")) {
-
-        daftarBarang = [];
-        total = 0;
-        uangBayar = 0;
-        pembayaranSelesai = false;
-        barisTerpilih = -1;
-
-        document.getElementById("txtBayar").value = "";
-
-        document.getElementById("jumlahBarang").value = 1;
-
-        document.getElementById("lblKembalian").textContent =
-            rupiah(0);
-
-        tampilkanTabel();
-
+    if(!confirm("Hapus semua barang dan reset transaksi?")) {
+        return;
     }
 
-});
+    transaksi = [];
+    total = 0;
+    uangBayar = 0;
+    nomorDipilih = -1;
+    pembayaranSelesai = false;
+
+    document.getElementById("uangBayar").value = "";
+    document.getElementById("jumlahBarang").value = 1;
+    document.getElementById("pilihanBarang").selectedIndex = 0;
+
+    document.getElementById("kembalian").textContent = rupiah(0);
+    document.getElementById("totalBelanja").textContent = rupiah(0);
+
+    document.getElementById("jendelaStruk").style.display = "none";
+
+    tampilkanTabel();
+    ubahHarga();
+
+}
+
 
 // PROSES PEMBAYARAN
-
-document.getElementById("btnBayar")
-.addEventListener("click", function() {
+function prosesPembayaran() {
 
     if(pembayaranSelesai) {
-        alert("Pembayaran sudah selesai. Reset untuk transaksi baru.");
+        alert("Pembayaran sudah berhasil. Silakan reset transaksi.");
         return;
     }
 
-    if(daftarBarang.length === 0) {
-
+    if(transaksi.length === 0) {
         alert("Tambahkan barang terlebih dahulu.");
-
         return;
-
     }
 
-    const input = document.getElementById("txtBayar").value.trim();
+    const input =
+        document.getElementById("uangBayar").value.trim();
 
     if(input === "" || !/^\d+$/.test(input)) {
-
-        alert("Masukkan nominal pembayaran yang benar.");
-
+        alert("Masukkan pembayaran berupa angka rupiah.");
         return;
-
     }
 
     uangBayar = Number(input);
 
-    if(!Number.isSafeInteger(uangBayar)) {
-        alert("Nominal pembayaran terlalu besar atau tidak valid.");
+    if(!Number.isSafeInteger(uangBayar) || uangBayar < 0) {
+        alert("Nominal pembayaran tidak valid.");
         return;
     }
 
     if(uangBayar < total) {
-
         alert("Uang pembayaran kurang!");
-
         return;
-
     }
 
-    const kembalian = uangBayar - total;
+    const kembali = uangBayar - total;
 
-    document.getElementById("lblKembalian").textContent =
-        rupiah(kembalian);
-
-    buatStruk(kembalian);
+    document.getElementById("kembalian")
+        .textContent = rupiah(kembali);
 
     pembayaranSelesai = true;
 
-    document.getElementById("jendelaStruk").style.display =
-        "flex";
+    buatStruk(kembali);
 
-});
+    alert(
+        "Pembayaran berhasil!\nKembalian: " + rupiah(kembali)
+    );
+
+    tampilkanStruk();
+
+}
+
 
 // MEMBUAT STRUK
-
 function buatStruk(kembalian) {
 
     let struk = "";
 
-    struk += "        GITHA MART\n";
-    struk += "     STRUK PEMBELIAN\n";
+    struk += "          GITHA MART\n";
+    struk += "       STRUK PEMBELIAN\n";
     struk += "--------------------------------\n";
 
-    daftarBarang.forEach(item => {
+    struk += "Tanggal: " +
+        new Date().toLocaleString("id-ID") + "\n";
+
+    struk += "--------------------------------\n";
+
+    transaksi.forEach(item => {
 
         struk += item.nama + "\n";
 
         struk += "  " + item.jumlah +
-                 " x " + rupiah(item.harga) + "\n";
+            " x " + rupiah(item.harga) + "\n";
 
         struk += "  Subtotal: " +
-                 rupiah(item.harga * item.jumlah) + "\n";
+            rupiah(item.harga * item.jumlah) + "\n\n";
 
     });
 
@@ -865,55 +916,83 @@ function buatStruk(kembalian) {
     struk += "--------------------------------\n";
 
     struk += "       Terima kasih! ♥\n";
+
     struk += "  Jangan Lupa Kembali Lagi ♥\n";
 
-    document.getElementById("areaStruk").textContent = struk;
+    document.getElementById("isiStruk")
+        .textContent = struk;
 
 }
 
-// CETAK STRUK
 
-document.getElementById("btnCetak")
-.addEventListener("click", function() {
+// MENAMPILKAN JENDELA STRUK
+function tampilkanStruk() {
+
+    document.getElementById("jendelaStruk")
+        .style.display = "flex";
+
+}
+
+
+// CETAK STRUK
+function cetakStruk() {
+
+    if(!pembayaranSelesai) {
+        alert("Proses pembayaran terlebih dahulu.");
+        return;
+    }
 
     window.print();
 
-});
+}
+
 
 // TUTUP STRUK
+function tutupStruk() {
 
-document.getElementById("btnTutup")
-.addEventListener("click", function() {
+    document.getElementById("jendelaStruk")
+        .style.display = "none";
 
-    document.getElementById("jendelaStruk").style.display =
-        "none";
+}
 
-});
 
 // KELUAR
+function keluar() {
 
-document.getElementById("btnKeluar")
-.addEventListener("click", function() {
+    if(confirm("Apakah Anda ingin keluar dari GITHA MART?")) {
 
-    if(confirm("Apakah Anda ingin keluar?")) {
+        document.getElementById("aplikasi").style.display = "none";
 
-        document.getElementById("halamanKasir").style.display =
-            "none";
-
-        document.getElementById("halamanLogin").style.display =
-            "flex";
+        document.getElementById("halamanLogin").style.display = "flex";
 
         document.getElementById("username").value = "";
-
         document.getElementById("password").value = "";
+
+        resetTransaksiTanpaKonfirmasi();
 
     }
 
-});
+}
 
-// TAMPILKAN TABEL AWAL
 
-tampilkanTabel();
+// RESET SAAT KELUAR
+function resetTransaksiTanpaKonfirmasi() {
+
+    transaksi = [];
+    total = 0;
+    uangBayar = 0;
+    nomorDipilih = -1;
+    pembayaranSelesai = false;
+
+    document.getElementById("uangBayar").value = "";
+    document.getElementById("jumlahBarang").value = 1;
+    document.getElementById("totalBelanja").textContent = rupiah(0);
+    document.getElementById("kembalian").textContent = rupiah(0);
+    document.getElementById("jendelaStruk").style.display = "none";
+
+    tampilkanTabel();
+
+}
 
 </script>
 
